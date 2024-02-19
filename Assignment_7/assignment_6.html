@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            margin: 20px;
+        }
+    </style>
+    <script>
+        function validate() {
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var gender = document.getElementById("gender").value;
+            var phone = document.getElementById("telephone").value;
+            var hobbies = document.getElementsByName("hobbies");
+
+            var isValidate = true;
+            var errorMessage = "";
+
+            if (name.trim() == "") {
+                errorMessage += "Name should not be blank\n";
+                isValidate = false;
+            }
+
+            if (name.length > 15) {
+                errorMessage += "Name should be no more than 15 letters long.\n";
+                isValidate = false;
+
+            }
+            if (!isNumeric(age)) {
+                errorMessage += "Age should be numeric\n";
+                isValidate = false;
+            }
+
+            if (parseInt(age) < 0) {
+                errorMessage += "Age should not be negative\n";
+                isValidate = false;
+            }
+
+            if (document.getElementById("gender").checked == false) {
+                errorMessage += "Gender must be selected (cannot leave both blank).";
+                isValidate = false;
+            }
+            document.getElementById("error").textContent = errorMessage;
+
+            var validMsg = "";
+
+            if (isValidate) {
+                validMsg += "Name : " + name + "\n"
+                validMsg += "Age : " + age + "\n";
+                validMsg += "Gender " + gender + "\n";
+                validMsg += "Phone : " + phone + "\n";
+                validMsg += "Hobbies : ";
+
+                var hobbiesList = [];
+                for (i = 0; i < hobbies.length; i++) {
+                    if (hobbies[i].checked) {
+                        hobbiesList.push(hobbies[i].value);
+                    }
+                }
+
+                validMsg += hobbiesList.join(", ");
+
+                document.getElementById("output").textContent = validMsg;
+            }
+        }
+
+        function isNumeric(value) {
+            return /^-?[0-9]+$/.test(value);
+        }
+    </script>
+
+</head>
+
+<body>
+    <div style="border:2px solid black; width: 50%; margin:auto">
+        <form style="margin: 30px;padding:30px">
+            Name:
+            <input type="text" name="name" id="name"><br> Age:
+            <input type="text" name="age" id="age"><br> Gender:
+            <input type="radio" name="gender" id="gender" value="male">Male
+            <input type="radio" name="gender" id="gender" value="female">Female
+            <br> Phone:
+            <input type="tel" name="telephone" id="telephone"><br> Hobbies:
+            <input type="checkbox" name="hobbies" value="reading" id="hobbies">Reading
+            <input type="checkbox" name="hobbies" value="sports" id="hobbies">Sports
+            <input type="checkbox" name="hobbies" value="movies" id="hobbies">Movies
+            <input type="checkbox" name="hobbies" value="travelling" id="hobbies">travelling<br>
+            <input type="submit" value="submit" onclick="validate()">
+            <p>Output:</p>
+            <textarea id="output" cols="50" rows="10">
+
+            </textarea>
+            <p>Errors</p>
+            <textarea id="error" cols="50" rows="10">
+
+            </textarea>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

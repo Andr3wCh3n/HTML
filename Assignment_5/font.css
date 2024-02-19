@@ -1,0 +1,13 @@
+body{
+    font-family: sans-serif;
+}
+
+.form {
+    border: 1px !important;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.form-control {
+    margin-bottom: 5px;
+}

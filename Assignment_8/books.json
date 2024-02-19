@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "book_name": "A Million to One",
+        "price": 200,
+        "image": "images/1.jpg"
+    },
+    {
+        "id": 2,
+        "book_name": "This is the book title",
+        "price": 220,
+        "image": "images/2.jpg"
+    },
+    {
+        "id": 3,
+        "book_name": "Mariana",
+        "price": 240,
+        "image": "images/3.jpg"
+    },
+    {
+        "id": 4,
+        "book_name": "Breaking",
+        "price": 250,
+        "image": "images/4.jpg"
+    },
+    {
+        "id": 5,
+        "book_name": "Garden",
+        "price": 270,
+        "image": "images/5.jpg"
+    },
+    {
+        "id": 6,
+        "book_name": "Walk into the shadow",
+        "price": 300,
+        "image": "images/6.jpg"
+    },
+    {
+        "id": 7,
+        "book_name": "The Spirit",
+        "price": 320,
+        "image": "images/7.jpg"
+    },
+    {
+        "id": 8,
+        "book_name": "The Sound Of Silence",
+        "price": 350,
+        "image": "images/8.jpg"
+    }
+]

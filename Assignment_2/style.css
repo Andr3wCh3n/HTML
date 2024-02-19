@@ -1,0 +1,12 @@
+.mail{
+    display: block;
+    text-align: center;
+}
+
+.user_img{
+    height: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
